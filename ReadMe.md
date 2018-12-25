@@ -104,16 +104,16 @@
    [详情参见](https://github.com/zeit/next.js)
    
     
-    npm install --save next react react-dom
+      npm install --save next react react-dom
     
    很老的老套路，项目文件结构就是主要的API，也就是说基于你的文件结构，框架会自动绑定路由
     
     
     
-    //After that, the file-system is the main API. Every .js file becomes a route that gets automatically processed and rendered.Populate ./pages/index.js inside your project:
-    export default () => <div>Welcome to next.js!</div>
+      //After that, the file-system is the main API. Every .js file becomes a route that gets automatically processed and rendered.Populate ./pages/index.js inside your project:
+      export default () => <div>Welcome to next.js!</div>
     
-    npm run dev
+      npm run dev
     
    基于import声明，代码自动分割。实现按需加载。
 
