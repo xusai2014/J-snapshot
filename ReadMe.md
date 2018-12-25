@@ -38,14 +38,15 @@ render方法，根据状态渲染视图，地址也是一种状态，所以不�
 
 **服务端渲染，难免遇到一个问题就是高可用，如何实现高可用？建议提供固有的前端资源托管作为兜底方案**
 
-**服务端渲染，面临挑战是前端技术栈纵向更深如，前端基础建设完善、前端体系规范化的团队**
-**如果仅仅是几人小团队，首先javascript不是强类型，前端代码健壮性较差，服务不可用，不如不用**
+**服务端渲染，面临挑战是前端技术栈纵向更深如，前端基础建设完善、前端体系规范化的团队比较适用。**
+**而如果仅仅是几人小团队，首先javascript不是强类型，前端代码健壮性较差，服务不可用，不如不用**
 
-   express+react [详情参见](https://github.com/xusai2014/FilmReview)
+   express+react 
+   [详情参见](https://github.com/xusai2014/FilmReview)
    此方案可以用来改造现有的前端框架解决骨架加载问题和SEO问题
    **该方案暂不支持代码分割的前端方案**
     
-    ```javascript
+  
       import { renderToString } from 'react-dom/server';
       import { StaticRouter } from 'react-router-dom';
       import  rootReducer from '../client/reducers';
@@ -93,24 +94,23 @@ render方法，根据状态渲染视图，地址也是一种状态，所以不�
            </html>
         `
       }  
-    ```
+
    next.js 一个很流氓的大前端框架，它并不希望无缝的与现有前端框架结合，它就是一个前端框架，希望打造新的前端解决
    方案，next化。当然开发的技术理念没变，所以上手很简单。使用它也要适量考虑技术栈迁移成本。
    [详情参见](https://github.com/zeit/next.js)
    
-    ```
+    
     npm install --save next react react-dom
-    ```
+    
    很老的老套路，项目文件结构就是主要的API，也就是说基于你的文件结构，框架会自动绑定路由
     
-    ```javascript
+    
     
     //After that, the file-system is the main API. Every .js file becomes a route that gets automatically processed and rendered.Populate ./pages/index.js inside your project:
     export default () => <div>Welcome to next.js!</div>
-    ```
-    ```
+    
     npm run dev
-    ```
+    
    基于import声明，代码自动分割。实现按需加载。
 
 + 预渲染
